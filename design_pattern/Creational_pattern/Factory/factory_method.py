@@ -38,4 +38,26 @@ class ProfileAbstractFactory(object):
 
     @abstractmethod
     def createProfile(self):
+        pass
+    def addDegree(self, degree):
+        self._degrees.append(degree)
+
+    def getDegrees(self):
+        return self._degrees
+class ManageFactory(ProfileAbstractFactory):
+    def createProfile(self):
+        self.addDegree(BE())
+        self.addDegree(ME())
+class ProfileCreatorFactory(object):
+    @classmethod
+    def create_profile(self, name):
+        return eval(profile_type + 'Factory')()
+    
+if __name__ == '__main__':
+    profile_type = input("Which Profile woulf you like to create? Manger/Engineer- ")
+    profile = ProfileCreatorFactory.create_profile(profile_type)
+    print("Create Profile of ",profile_type)
+    print("Profile has following degrees -")
+    for deg in profile.getDegrees():
+        print('- ', deg)
         
