@@ -1,11 +1,7 @@
 '''
-
 Learn how to create simple factory which helps to hide 
 logic of creating objects.
-
 '''
-
-
 from abc import ABCMeta, abstractmethod
 
 class AbstractDegree(metaclass=ABCMeta):
@@ -60,4 +56,3 @@ if __name__ == '__main__':
     print("Profile has following degrees -")
     for deg in profile.getDegrees():
         print('- ', deg)
-        
