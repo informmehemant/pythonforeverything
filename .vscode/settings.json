@@ -1,4 +1,12 @@
 {
   "python.linting.enabled": true,
-  "python.linting.pylintEnabled": true
+  "python.linting.pylintEnabled": true,
+  "python.linting.pylintArgs": [
+    "--disable=missing-class-docstring",
+    "--disable=missing-function-docstring"
+  ],
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.autopep8"
+  },
+  "python.formatting.provider": "none"
 }
